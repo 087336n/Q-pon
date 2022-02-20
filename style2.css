@@ -1,0 +1,50 @@
+
+h1 {
+  font-family: Comfortaa;
+  font-size: 32px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+h2 {
+  font-family: Comfortaa;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 26.4px;
+}
+
+.button {
+  border: none;
+  color: black;
+  background-color: white;
+  border-radius: 8px;
+  border: 2px solid #000000;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  width: 250px;
+  padding: 15px 32px;
+  text-align: center;
+  font-family : Comfortaa;
+
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+body {
+  background-image: url('q_background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#WinLoseScreen {
+  text-align: center;
+  margin-top: 100px;
+}
+
+
+#wheel {
+  margin-left: 500px;
+}

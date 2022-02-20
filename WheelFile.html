@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style2.css">
+	<link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+	<h1> Spin the Wheel! </h1>
+	<br>
+	<div align="center" id="wheel">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="jquery-ui.min.js"></script>
+		<script type="text/javascript" src="src/rouletteWheel.js"></script>
+		<script type="text/javascript">
+		// https://github.com/JavoByte/rouletteWheel
+
+		var nameStr = "Lose!, 5% Off, Lose!, 20 Points, $5 Off, Spin Again!, 10% Off, 50 Points, Lose!, $3 Off";
+		var nameList = nameStr.split(",");
+		var names = [];
+		for (var i=0; i < nameList.length; i++) {
+			names.push(nameList[i]); // previously $.trim(nameList[i])
+		}
+
+		$(function(){
+			var items = {};
+			for(var i=0; i < names.length; i++){
+				items[i] = names[i];
+			}
+
+			$('#canvas').rouletteWheel({
+				items : items,
+				selected : function(key, value){
+					if (value == " Lose!") {
+						window.location.href='Wheel_Lost.html';
+					} else if (value == " $3 Off") {
+						window.location.href='Wheel_Won.html';
+					} else if (value == " 5% Off") {
+						//Add %5 Off coupon to wallet
+						window.location.href='Wheel_Won.html';
+					} else if (value == " 20 Points") {
+						//Add 20 Points to wallet
+						window.location.href='Wheel_Won.html';
+					} else if (value == " $5 Off") {
+						//Add $5 Off coupon to wallet
+						window.location.href='Wheel_Won.html';
+					}else if (value == " Spin Again!") {
+						//Replay
+						window.location.href='WheelFile.html';
+					} else if (value == " 10% Off") {
+						//Add %10 Off coupon to wallet
+						window.location.href='Wheel_Won.html';
+					} else if (value == " 50 Points") {
+						//Add 50 Points to wallet
+						window.location.href='Wheel_Won.html';
+					}
+				},
+				spinText : 'SPIN',
+			});
+
+		});
+		</script>
+	</div>
+	<title></title>
+</head>
+<body align=center>
+
+	<canvas id="canvas" width="500" height="500"></canvas>
+
+</body>
+</html>
